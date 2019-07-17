@@ -1,0 +1,20 @@
+### WordPress General Code ###
+# BEGIN WordPress
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteBase /
+RewriteRule ^index\.php$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /index.php [L]
+</IfModule>
+
+# END WordPress
+
+
+### Disables directory listing (Direct Access) ###
+Options All -Indexes
+
+
+### Handles 403 (forbidden) status as 404 (not found) ###
+ErrorDocument 403 /index.php?error=404
